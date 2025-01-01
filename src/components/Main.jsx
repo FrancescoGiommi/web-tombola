@@ -13,6 +13,15 @@ export default function Main() {
           <div className="numbers col-2">{number}</div>
         ))}
       </div>
+      <div style={{ maxWidth: "320px" }}>
+        <div>Ultimo numero estratto</div>
+        <div className="extract-number"></div>
+        <hr />
+        <div className="d-flex flex-column gap-2">
+          <button className="btn btn-warning">Estrai</button>
+          <button className="btn btn-danger">Termina gioco</button>
+        </div>
+      </div>
     </>
   );
 }

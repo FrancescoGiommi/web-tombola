@@ -4,8 +4,8 @@ import Main from "./components/Main";
 function App() {
   return (
     <>
-      <div className="container my-3 text-center">
-        <Header />
+      <Header />
+      <div className="container d-flex my-3 text-center">
         <Main />
       </div>
     </>

@@ -3,3 +3,10 @@
   border-radius: 20px;
   margin: 10px;
 }
+
+.extract-number {
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
