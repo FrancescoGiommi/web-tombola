@@ -6,6 +6,15 @@ export default function Main() {
     60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78,
     79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
   ];
+
+  /* Estraggo il numero dall'array */
+  const handleExtractNumber = () => {
+    numbers.splice(Math.floor(Math.random() * numbers.length), 1);
+    console.log(numbers);
+  };
+
+  console.log(numbers);
+
   return (
     <>
       <div className="row d-flex" style={{ maxWidth: "1000px" }}>
@@ -18,7 +27,9 @@ export default function Main() {
         <div className="extract-number"></div>
         <hr />
         <div className="d-flex flex-column gap-2">
-          <button className="btn btn-warning">Estrai</button>
+          <button className="btn btn-warning" onClick={handleExtractNumber}>
+            Estrai
+          </button>
           <button className="btn btn-danger">Termina gioco</button>
         </div>
       </div>
