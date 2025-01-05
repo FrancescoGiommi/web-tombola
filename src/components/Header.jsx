@@ -1,7 +1,9 @@
 export default function Header() {
   return (
     <>
-      <h1 className="text-center">Tombola</h1>
+      <h1 className="title display-2 text-center">
+        <strong>Tombola</strong>
+      </h1>
     </>
   );
 }

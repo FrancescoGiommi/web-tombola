@@ -18,7 +18,8 @@ export default function Main() {
   const handleExtractNumber = () => {
     /* Controllo se i numeri sono usciti tutti */
     if (extractedNumbers.length === numbers.length) {
-      return alert("Hai estratto tutti i numeri!");
+      alert("Hai estratto tutti i numeri! Gioco Terminato!");
+      return setExtractedNumbers([]), setCurrentNumber(null);
     }
 
     let randomNumber;
@@ -32,6 +33,12 @@ export default function Main() {
     console.log(`Hai estratto il numero ${extractedNumber}`);
   };
 
+  /* Funzione per terminare il gioco */
+  const handleEndsGame = () => {
+    alert("Gioco Terminato! Hai fatto Tombola!");
+    setCurrentNumber(null);
+    setExtractedNumbers([]);
+  };
   return (
     <>
       <div className="row d-flex" style={{ maxWidth: "1000px" }}>
@@ -42,23 +49,29 @@ export default function Main() {
               extractedNumbers.includes(number) ? "text-bg-danger" : ""
             }`}
           >
-            {number}
+            <strong>{number}</strong>
           </div>
         ))}
       </div>
       <div style={{ maxWidth: "320px" }}>
-        <div>Ultimo numero estratto</div>
-        <div className="extract-number">{currentNumber}</div>
+        <div>
+          <strong>Ultimo numero estratto</strong>
+        </div>
+        <div className="extract-number ">
+          <strong>{currentNumber}</strong>
+        </div>
         <hr />
         <div className="d-flex flex-column gap-2">
           <button className="btn btn-warning" onClick={handleExtractNumber}>
-            Estrai
+            <strong>Estrai</strong>
           </button>
           <button
-            className="btn btn-danger"
-            onClick={() => alert("Gioco terminato!")}
+            className={`btn btn-danger ${
+              extractedNumbers.length < 15 ? "disabled" : "able"
+            }`}
+            onClick={handleEndsGame}
           >
-            Termina gioco
+            <strong>Termina gioco</strong>
           </button>
         </div>
       </div>
